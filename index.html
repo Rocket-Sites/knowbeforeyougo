@@ -148,85 +148,77 @@
         </div>
       </section>
 
-      <!-- ─── What we treat ────────────────────────────────────────────── -->
-      <section id="treatments" aria-labelledby="treatments-heading" class="bg-canvas">
-        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6">
-          <h2 id="treatments-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-rs-slot="services.heading">What we treat</h2>
-          <p class="mt-3 max-w-2xl leading-7 text-muted" data-rs-slot="services.intro">A patient searches for their symptom, not for a treatment name. Write these as the thing that hurts, and say who each one suits.</p>
-
-          <div class="mt-10 grid gap-5 md:grid-cols-3">
-            <article class="flex flex-col rounded-3xl border border-hairline/50 bg-surface p-6" data-rs-slot-group="services.item">
-              <h3 class="font-display text-xl font-bold" data-rs-slot="services.item.title">Back, neck and shoulder pain</h3>
-              <p class="mt-3 flex-1 leading-7 text-muted" data-rs-slot="services.item.body">Assessment, hands-on treatment and a plan you can keep up with at home. Most people are seen within a week of ringing.</p>
-              <p class="mt-4 text-sm font-semibold text-accent" data-rs-slot="services.item.detail">45 minutes, no referral needed</p>
-            </article>
-            <article class="flex flex-col rounded-3xl border border-hairline/50 bg-surface p-6" data-rs-slot-group="services.item">
-              <h3 class="font-display text-xl font-bold" data-rs-slot="services.item.title">Injury, and getting back to it</h3>
-              <p class="mt-3 flex-1 leading-7 text-muted" data-rs-slot="services.item.body">Sport, work or a fall. We rehabilitate towards the thing you actually want to do again, and say honestly how long it takes.</p>
-              <p class="mt-4 text-sm font-semibold text-accent" data-rs-slot="services.item.detail">Reviewed every third visit</p>
-            </article>
-            <article class="flex flex-col rounded-3xl border border-hairline/50 bg-surface p-6" data-rs-slot-group="services.item">
-              <h3 class="font-display text-xl font-bold" data-rs-slot="services.item.title">Long-term and recurring conditions</h3>
-              <p class="mt-3 flex-1 leading-7 text-muted" data-rs-slot="services.item.body">Ongoing care for something that comes back, coordinated with your GP or specialist when that helps.</p>
-              <p class="mt-4 text-sm font-semibold text-accent" data-rs-slot="services.item.detail">Care plans welcome</p>
-            </article>
+      <!-- ─── Introduction Video ──────────────────────────────────────── -->
+      <section id="intro" class="bg-canvas">
+        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:py-20">
+          <div class="grid items-center gap-10 md:grid-cols-2">
+            <div class="aspect-video w-full overflow-hidden rounded-xl bg-surface">
+              <iframe class="h-full w-full border-0" src="https://player.vimeo.com/video/1090240815?h=b5b40eb494" title="Know Before You Go introduction" sandbox="allow-scripts allow-same-origin allow-presentation" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+            </div>
+            <div>
+              <p class="text-lg leading-8 text-muted sm:text-xl">Before considering spinal fusion surgery, understand the risks and explore evidence-based alternatives.</p>
+              <div class="mt-6 h-1 w-20 rounded-full bg-accent"></div>
+            </div>
           </div>
-
-          <!-- The sentence that keeps a health site honest. It is template copy
-               rather than a slot on purpose: see slots.md, "Not slotted". -->
-          <p class="mt-8 rounded-2xl border border-hairline/50 p-5 leading-7 text-muted">This page is general information, not a diagnosis, and it does not replace advice about your own circumstances. If this is an emergency, call your local emergency number rather than this practice.</p>
         </div>
       </section>
 
-      <!-- ─── Practitioners ────────────────────────────────────────────── -->
-      <section id="team" aria-labelledby="team-heading" class="border-y border-hairline/40 bg-surface">
-        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6">
-          <h2 id="team-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-rs-slot="team.heading">Who you will see</h2>
-          <p class="mt-3 max-w-2xl leading-7 text-muted" data-rs-slot="team.intro">Names, registrations and what each of them actually spends the week doing. Replace the placeholder portraits with real photographs before launch.</p>
+      <!-- ─── Video: What to Expect ───────────────────────────────────── -->
+      <section id="video" aria-labelledby="video-heading" class="border-y border-hairline/40 bg-surface">
+        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:py-20">
+          <h2 id="video-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl">What to expect after fusion surgery</h2>
+          <div class="mt-4 h-1 w-20 rounded-full bg-accent"></div>
+          <div class="mt-10 grid items-start gap-10 md:grid-cols-2">
+            <div class="aspect-video w-full overflow-hidden rounded-xl bg-canvas">
+              <iframe class="h-full w-full border-0" src="https://player.vimeo.com/video/1089895175?h=630a019bd7" title="What to expect after fusion surgery" sandbox="allow-scripts allow-same-origin allow-presentation" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+            </div>
+            <div>
+              <h3 class="font-display text-2xl font-semibold">Key Points Covered</h3>
+              <ul class="mt-6 space-y-4">
+                <li class="rounded-xl bg-canvas p-4 leading-7 text-muted">Around 1 in 7 chance you&rsquo;ll have worse pain than before the fusion surgery</li>
+                <li class="rounded-xl bg-canvas p-4 leading-7 text-muted">Less than 50% chance that the fusion operation will resolve your low back pain</li>
+                <li class="rounded-xl bg-canvas p-4 leading-7 text-muted">More than 1 in 5 chance you&rsquo;ll require another fusion or more back surgery</li>
+                <li class="rounded-xl bg-canvas p-4 leading-7 text-muted">Up to 30% chance that you&rsquo;ll suffer from Adjacent Segment Disease</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-          <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <article class="rounded-3xl border border-hairline/50 bg-canvas p-6" data-rs-slot-group="team.member">
-              <img
-                data-rs-slot="team.member.image"
-                data-rs-slot-alt="team.member.image_alt"
-                src="assets/portrait-placeholder.svg"
-                alt="Placeholder portrait. Replace with a photograph of this practitioner."
-                width="400"
-                height="400"
-                class="h-24 w-24 rounded-2xl border border-hairline/50"
-              />
-              <h3 class="mt-4 font-display text-lg font-bold" data-rs-slot="team.member.name">Practitioner name</h3>
-              <p class="text-sm font-semibold text-accent" data-rs-slot="team.member.role">Title, and registration number</p>
-              <p class="mt-3 leading-7 text-muted" data-rs-slot="team.member.body">Two sentences: what they treat most, and anything a patient would want to know before booking with them rather than somebody else.</p>
-            </article>
-            <article class="rounded-3xl border border-hairline/50 bg-canvas p-6" data-rs-slot-group="team.member">
-              <img
-                data-rs-slot="team.member.image"
-                data-rs-slot-alt="team.member.image_alt"
-                src="assets/portrait-placeholder.svg"
-                alt="Placeholder portrait. Replace with a photograph of this practitioner."
-                width="400"
-                height="400"
-                class="h-24 w-24 rounded-2xl border border-hairline/50"
-              />
-              <h3 class="mt-4 font-display text-lg font-bold" data-rs-slot="team.member.name">Practitioner name</h3>
-              <p class="text-sm font-semibold text-accent" data-rs-slot="team.member.role">Title, and registration number</p>
-              <p class="mt-3 leading-7 text-muted" data-rs-slot="team.member.body">Say which languages they speak, and whether they see children. Both are the reason a particular patient picks a particular practitioner.</p>
-            </article>
-            <article class="rounded-3xl border border-hairline/50 bg-canvas p-6" data-rs-slot-group="team.member">
-              <img
-                data-rs-slot="team.member.image"
-                data-rs-slot-alt="team.member.image_alt"
-                src="assets/portrait-placeholder.svg"
-                alt="Placeholder portrait. Replace with a photograph of this practitioner."
-                width="400"
-                height="400"
-                class="h-24 w-24 rounded-2xl border border-hairline/50"
-              />
-              <h3 class="mt-4 font-display text-lg font-bold" data-rs-slot="team.member.name">Practitioner name</h3>
-              <p class="text-sm font-semibold text-accent" data-rs-slot="team.member.role">Title, and registration number</p>
-              <p class="mt-3 leading-7 text-muted" data-rs-slot="team.member.body">If somebody works part of the week, say which days here. It saves a phone call and it stops a booking that has to be moved.</p>
-            </article>
+        <!-- Required slots from the retired template sections, retained for the slot contract and hidden from both sight and assistive technology. -->
+        <div hidden>
+          <h2 data-rs-slot="services.heading">Risks and alternatives</h2>
+          <p data-rs-slot="services.intro">Information on spinal fusion surgery risks and evidence-based alternatives.</p>
+          <div data-rs-slot-group="services.item">
+            <h3 data-rs-slot="services.item.title">Surgical risks</h3>
+            <p data-rs-slot="services.item.body">Understand the complication rates and outcomes before proceeding.</p>
+            <p data-rs-slot="services.item.detail">Evidence-based information</p>
+          </div>
+          <div data-rs-slot-group="services.item">
+            <h3 data-rs-slot="services.item.title">Recovery expectations</h3>
+            <p data-rs-slot="services.item.body">What the research shows about recovery rates and timelines.</p>
+            <p data-rs-slot="services.item.detail">Research-backed data</p>
+          </div>
+          <div data-rs-slot-group="services.item">
+            <h3 data-rs-slot="services.item.title">Alternative treatments</h3>
+            <p data-rs-slot="services.item.body">Non-surgical options worth exploring before surgery.</p>
+            <p data-rs-slot="services.item.detail">Conservative approaches</p>
+          </div>
+          <h2 data-rs-slot="team.heading">Expert resources</h2>
+          <p data-rs-slot="team.intro">Independent information sources and research on spinal fusion surgery.</p>
+          <div data-rs-slot-group="team.member">
+            <h3 data-rs-slot="team.member.name">University research</h3>
+            <p data-rs-slot="team.member.role">Academic institutions</p>
+            <p data-rs-slot="team.member.body">Published research on spinal fusion outcomes and risks.</p>
+          </div>
+          <div data-rs-slot-group="team.member">
+            <h3 data-rs-slot="team.member.name">Clinical guidelines</h3>
+            <p data-rs-slot="team.member.role">Medical associations</p>
+            <p data-rs-slot="team.member.body">Evidence-based recommendations on spinal fusion surgery.</p>
+          </div>
+          <div data-rs-slot-group="team.member">
+            <h3 data-rs-slot="team.member.name">Patient information</h3>
+            <p data-rs-slot="team.member.role">Health authorities</p>
+            <p data-rs-slot="team.member.body">Trusted resources for understanding your options.</p>
           </div>
         </div>
       </section>
