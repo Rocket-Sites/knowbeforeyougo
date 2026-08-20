@@ -1,0 +1,143 @@
+<!--
+  TERMS OF USE TEMPLATE. THIS IS NOT LEGAL ADVICE.
+
+  A starting point, nothing more. It is deliberately generic: the template
+  cannot know who is publishing it, where they are, what they sell, or what the
+  law requires of them. Before this site goes live:
+
+    1. A qualified lawyer in the relevant jurisdiction must read it.
+    2. Every bracketed placeholder must be replaced by a person who knows the
+       answer. [ENTITY], [JURISDICTION], [CONTACT] and [DATE] are placeholders.
+       They are never filled by a generator, and never guessed.
+    3. Every clause must be checked against what this business actually does.
+       Delete what does not apply. Do not leave a clause standing because it
+       sounds reasonable.
+
+  A confident-looking document full of invented specifics is worse than an
+  obviously unfinished one. The visible banner says so to whoever previews this
+  in a browser; delete the element carrying data-rs-slot-group="rs.review_banner"
+  once the review is genuinely done.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="source-repo" content="rocket-sites/knowbeforeyougo" />
+
+    <title>Terms of use</title>
+    <meta name="description" content="The terms this site is provided under. Requires review before launch." />
+    <meta name="robots" content="noindex" />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta name="rs-behaviour-dark-mode" content="off" data-rs-slot="behaviour.dark_mode" />
+
+    <!-- Not deferred: it sets the theme before the body is painted. -->
+    <script src="behaviours.js"></script>
+  </head>
+
+  <body class="bg-canvas font-sans text-ink antialiased">
+    <a href="#main" class="sr-only rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-canvas focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60]">Skip to main content</a>
+
+    <header id="header" class="border-b border-hairline/40 bg-canvas">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6" aria-label="Primary">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.svg" alt="" aria-hidden="true" width="40" height="40" class="h-9 w-9" />
+          <span class="font-display text-xl font-bold tracking-tight" data-rs-slot="business.name">Know Before You Go</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <a href="index.html#contact" class="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-on-accent hover:bg-accent/90" data-rs-slot="nav.cta_href"><span data-rs-slot="nav.cta">Book an appointment</span></a>
+          <button type="button" data-rs-theme-toggle aria-pressed="false" class="h-10 w-10 items-center justify-center rounded-xl border border-hairline">
+            <span class="sr-only">Switch between the light and dark theme</span>
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor" stroke="none" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <article class="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+        <h1 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">Terms of use</h1>
+        <p class="mt-3 text-sm text-muted">Last updated: [DATE]</p>
+
+        <!-- The visible half of the review warning: see the top of this file.
+             Removing it by hand is one edit: delete this element. -->
+        <div role="note" class="mt-8 rounded-2xl border-2 border-accent bg-surface p-5" data-rs-slot-group="rs.review_banner">
+          <p class="font-display font-bold" data-rs-slot="rs.review_banner.heading">This page has not been reviewed yet</p>
+          <p class="mt-2 leading-7 text-muted" data-rs-slot="rs.review_banner.body">It is a starting point, not legal advice. Every bracketed placeholder below must be replaced by a person, and the whole document read by a qualified lawyer in the relevant jurisdiction, before this site goes live.</p>
+        </div>
+
+        <h2 class="mt-10 font-display text-2xl font-bold">Who these terms are between</h2>
+        <p class="mt-3 leading-7 text-muted">These terms apply between [ENTITY], which publishes this website, and you, when you use it. Using the site means you accept them. If you do not, please stop using the site.</p>
+
+        <h2 class="mt-8 font-display text-2xl font-bold">Using this site</h2>
+        <p class="mt-3 leading-7 text-muted">You may read this site and use it to get in touch with [ENTITY]. You may not attempt to interfere with it, gain access to any part of it you have not been given, or use it in a way that breaks the law of [JURISDICTION].</p>
+
+        <h2 class="mt-8 font-display text-2xl font-bold">Content on this site</h2>
+        <p class="mt-3 leading-7 text-muted">Unless stated otherwise, the text, images and design of this site belong to [ENTITY] or are used with permission. You may quote from it with attribution. Republishing it wholesale, or presenting it as your own, is not permitted.</p>
+
+        <h2 class="mt-8 font-display text-2xl font-bold">Accuracy</h2>
+        <p class="mt-3 leading-7 text-muted">[ENTITY] takes care to keep this site accurate and current, and cannot promise it is free of errors or complete at any given moment. Nothing here is professional advice for your particular circumstances, and it should not be relied on as if it were.</p>
+
+        <h2 class="mt-8 font-display text-2xl font-bold">Links to other sites</h2>
+        <p class="mt-3 leading-7 text-muted">This site may link to sites [ENTITY] does not control. Those links are provided for convenience and are not an endorsement, and [ENTITY] is not responsible for what is on them.</p>
+
+        <h2 class="mt-8 font-display text-2xl font-bold">Services described here</h2>
+        <p class="mt-3 leading-7 text-muted">Descriptions of what [ENTITY] offers are an invitation to get in touch, not an offer capable of acceptance. Work is done under a separate agreement, and where that agreement and this page disagree, the agreement governs.</p>
+
+        <h2 class="mt-8 font-display text-2xl font-bold">Liability</h2>
+        <p class="mt-3 leading-7 text-muted">To the extent the law of [JURISDICTION] allows it to be limited, [ENTITY] is not liable for loss arising from your use of this site. Nothing here excludes a liability that cannot lawfully be excluded, and the limits that actually apply must be confirmed against the law of [JURISDICTION] before this page is published.</p>
+
+        <h2 class="mt-8 font-display text-2xl font-bold">Privacy</h2>
+        <p class="mt-3 leading-7 text-muted">Personal information collected through this site is handled as described in the <a href="privacy.html" class="text-accent underline underline-offset-4">privacy policy</a>, which forms part of these terms.</p>
+
+        <h2 class="mt-8 font-display text-2xl font-bold">Changes to these terms</h2>
+        <p class="mt-3 leading-7 text-muted">These terms may change. The current version is always the one published on this page, and the date it last changed is shown at the top.</p>
+
+        <h2 class="mt-8 font-display text-2xl font-bold">Governing law</h2>
+        <p class="mt-3 leading-7 text-muted">These terms are governed by the law of [JURISDICTION], and the courts of [JURISDICTION] have jurisdiction over any dispute arising from them.</p>
+
+        <h2 class="mt-8 font-display text-2xl font-bold">How to get in touch</h2>
+        <p class="mt-3 leading-7 text-muted">Questions about these terms go to [CONTACT].</p>
+      </article>
+    </main>
+
+    <footer id="footer" class="border-t border-hairline/40 bg-canvas">
+      <div class="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <div class="flex items-center gap-3">
+              <img src="assets/logo.svg" alt="" aria-hidden="true" width="40" height="40" class="h-8 w-8" />
+              <span class="font-display text-lg font-bold tracking-tight" data-rs-slot="business.name">Know Before You Go</span>
+            </div>
+            <p class="mt-4 max-w-xs leading-7 text-muted" data-rs-slot="business.tagline">Independent information on the risks and     evidence around spinal fusion surgery, so people can make an     informed decision. An initiative of the Workers Insurance     Association of NSW.</p>
+          </div>
+          <nav aria-label="Footer">
+            <h2 class="text-xs font-semibold uppercase tracking-wider">The practice</h2>
+            <ul class="mt-4 space-y-2 text-muted">
+              <li><a href="index.html#treatments" class="hover:text-accent">What we treat</a></li>
+              <li><a href="index.html#team" class="hover:text-accent">Practitioners</a></li>
+              <li><a href="index.html#hours" class="hover:text-accent">Hours</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Legal">
+            <h2 class="text-xs font-semibold uppercase tracking-wider">Legal</h2>
+            <ul class="mt-4 space-y-2 text-muted">
+              <li><a href="index.html" class="hover:text-accent">Home</a></li>
+              <li><a href="privacy.html" class="hover:text-accent">Privacy policy</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="mt-10 flex flex-col gap-3 border-t border-hairline/40 pt-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+          <p data-rs-slot="footer.blurb">Built to be edited. Replace this line with something worth reading.</p>
+          <p data-rs-slot="footer.copyright">&copy; Your business name</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

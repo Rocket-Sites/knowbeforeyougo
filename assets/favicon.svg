@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Willow">
+  <!-- Colours are literal here, not brand tokens: a favicon is fetched by the
+       browser as its own document and inherits nothing from the page. A rebrand
+       replaces this file. -->
+  <rect width="32" height="32" rx="8" fill="#136457"/>
+  <g fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round">
+    <path d="M16 26V12"/>
+    <path d="M16 15c-3.5 0-6-2.2-6-5.5 3.5 0 6 2.2 6 5.5Z"/>
+    <path d="M16 19c3.5 0 6-2.2 6-5.5-3.5 0-6 2.2-6 5.5Z"/>
+  </g>
+</svg>

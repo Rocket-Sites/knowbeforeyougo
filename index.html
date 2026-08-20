@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- The extension resolves a live page back to the repo that backs it
+         through this one tag. The value below is a placeholder the publisher
+         overwrites at deploy time. -->
+    <meta name="source-repo" content="rocket-sites/knowbeforeyougo" />
+
+    <title data-rs-slot="site.title">Know Before You Go</title>
+    <meta
+      name="description"
+      data-rs-slot="site.description"
+      content="Independent information on the risks and     evidence around spinal fusion surgery, so people can make an     informed decision. An initiative of the Workers Insurance     Association of NSW."
+    />
+    <link rel="canonical" href="https://example.com/" data-rs-slot="site.canonical" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Know Before You Go" data-rs-slot="site.title" />
+    <meta
+      property="og:description"
+      data-rs-slot="site.description"
+      content="Independent information on the risks and     evidence around spinal fusion surgery, so people can make an     informed decision. An initiative of the Workers Insurance     Association of NSW."
+    />
+    <meta property="og:url" content="https://example.com/" data-rs-slot="site.canonical" />
+    <meta property="og:image" content="https://example.com/assets/og-image.png" data-rs-slot="site.og_image" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Behaviour switches. Each one is a slot (templates/SLOTS.md, the
+         behaviour.* namespace): set it to "on" in rocket-site.json and the
+         behaviour ships with the site. They are "off" here so a site behaves
+         exactly as it did before somebody asked for one.
+
+         The code is behaviours.js, which is part of this template. It runs in
+         the visitor's browser, fetches nothing, and enhances markup that
+         already works without it. -->
+    <meta name="rs-behaviour-dark-mode" content="off" data-rs-slot="behaviour.dark_mode" />
+    <meta name="rs-behaviour-mobile-nav" content="off" data-rs-slot="behaviour.mobile_nav" />
+    <meta name="rs-behaviour-faq-accordion" content="off" data-rs-slot="behaviour.faq_accordion" />
+
+    <!-- Not deferred, on purpose: it sets the theme attribute on <html> before
+         the body is painted, so a visitor who chose dark never sees a flash of
+         the light palette. -->
+    <script src="behaviours.js"></script>
+  </head>
+
+  <body class="bg-canvas font-sans text-ink antialiased">
+    <a href="#main" class="sr-only rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-canvas focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60]">Skip to main content</a>
+
+    <header id="header" class="sticky top-0 z-50 border-b border-hairline/40 bg-canvas/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6" aria-label="Primary">
+        <a href="#header" class="flex items-center gap-3">
+          <img src="assets/logo.svg" alt="" aria-hidden="true" width="40" height="40" class="h-9 w-9" />
+          <span class="font-display text-xl font-bold tracking-tight" data-rs-slot="business.name">Know Before You Go</span>
+        </a>
+
+        <ul class="hidden items-center gap-6 text-sm font-semibold text-muted lg:flex">
+          <li><a href="#treatments" class="hover:text-accent">What we treat</a></li>
+          <li><a href="#team" class="hover:text-accent">Practitioners</a></li>
+          <li><a href="#visit" class="hover:text-accent">Your first visit</a></li>
+          <li><a href="#fees" class="hover:text-accent">What it costs</a></li>
+          <li><a href="#hours" class="hover:text-accent">Hours</a></li>
+        </ul>
+
+        <div class="flex items-center gap-2">
+          <!-- The header call to action is TWO slots on two elements, and it
+               has to be: one element carries one data-rs-slot, so the label and
+               the destination cannot share the <a>. nav.cta_href writes the
+               href because its name ends in _href, and the value is
+               index.html#contact rather than #contact because the same value
+               lands on all four pages. See ../SLOTS.md, nav.*. -->
+          <a href="index.html#contact" class="hidden rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-on-accent hover:bg-accent/90 sm:inline-flex" data-rs-slot="nav.cta_href"><span data-rs-slot="nav.cta">Book an appointment</span></a>
+
+          <!-- The theme toggle for behaviour.dark_mode. It carries no display
+               utility on purpose: tailwind.css hides it and reveals it only once
+               behaviours.js has put data-rs-theme on <html>, which it does only
+               when the slot says "on". -->
+          <button type="button" data-rs-theme-toggle aria-pressed="false" class="h-10 w-10 items-center justify-center rounded-xl border border-hairline">
+            <span class="sr-only">Switch between the light and dark theme</span>
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor" stroke="none" />
+            </svg>
+          </button>
+
+          <!-- Native disclosure, so the menu opens and closes with scripting
+               off. behaviour.mobile_nav adds only what the element cannot do for
+               itself: close on Escape, on an outside click, and after a visitor
+               follows a link to another part of this page. -->
+          <details class="relative lg:hidden" data-rs-mobile-nav>
+            <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-xl border border-hairline">
+              <span class="sr-only">Menu</span>
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+            </summary>
+            <ul class="absolute right-0 mt-3 w-56 rounded-2xl border border-hairline/60 bg-canvas p-2 text-sm font-semibold shadow-xl">
+              <li><a href="#treatments" class="block rounded-xl px-3 py-2 hover:bg-surface">What we treat</a></li>
+              <li><a href="#team" class="block rounded-xl px-3 py-2 hover:bg-surface">Practitioners</a></li>
+              <li><a href="#visit" class="block rounded-xl px-3 py-2 hover:bg-surface">Your first visit</a></li>
+              <li><a href="#fees" class="block rounded-xl px-3 py-2 hover:bg-surface">What it costs</a></li>
+              <li><a href="#hours" class="block rounded-xl px-3 py-2 hover:bg-surface">Hours</a></li>
+              <li><a href="index.html#contact" class="mt-1 block rounded-xl bg-accent px-3 py-2 text-center text-on-accent" data-rs-slot="nav.cta_href"><span data-rs-slot="nav.cta">Book an appointment</span></a></li>
+            </ul>
+          </details>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+      <section id="hero" aria-labelledby="hero-heading" class="border-b border-hairline/40 bg-surface">
+        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:py-20">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent" data-rs-slot="hero.eyebrow">Taking new patients</p>
+          <h1 id="hero-heading" class="mt-4 max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl" data-rs-slot="hero.heading">Care that starts by listening to the whole problem</h1>
+          <p class="mt-5 max-w-2xl text-lg leading-8 text-muted" data-rs-slot="hero.body">Appointments are long enough to examine, explain and treat in the same visit. You see the same practitioner each time, and you will always be told what the plan is before it starts.</p>
+
+          <!-- Both hero buttons carry their destination as a slot, the same
+               shape as nav.cta above: the href on the <a>, the label on a
+               <span> inside it, because one element carries one data-rs-slot.
+               A bare fragment is legal here and is not on nav.cta_href: these
+               two are marked on index.html only, so #contact resolves. A
+               practice whose bookings live elsewhere, or a business whose two
+               buttons are two differently addressed mailto: links, changes
+               them without touching the template. -->
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#contact" class="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent hover:bg-accent/90" data-rs-slot="hero.cta_primary_href"><span data-rs-slot="hero.cta_primary">Book an appointment</span></a>
+            <a href="#treatments" class="rounded-full border border-hairline px-6 py-3 text-sm font-semibold hover:bg-canvas" data-rs-slot="hero.cta_secondary_href"><span data-rs-slot="hero.cta_secondary">See what we treat</span></a>
+          </div>
+
+          <!-- The three facts that decide whether somebody in pain calls today.
+               They are the same slots as the contact section, by the
+               multiplicity rule: one name, one value, two places. -->
+          <dl class="mt-10 grid gap-4 border-t border-hairline/40 pt-6 sm:grid-cols-3">
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Open</dt>
+              <dd class="mt-1 leading-7" data-rs-slot="contact.hours">Monday to Saturday, early and late appointments</dd>
+            </div>
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Phone</dt>
+              <dd class="mt-1 leading-7"><a href="tel:+0000000000" class="underline underline-offset-4 hover:text-accent" data-rs-slot="contact.phone_href"><span data-rs-slot="contact.phone">Add your phone number</span></a></dd>
+            </div>
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Where</dt>
+              <dd class="mt-1 leading-7" data-rs-slot="contact.address">Add your street address here</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ─── What we treat ────────────────────────────────────────────── -->
+      <section id="treatments" aria-labelledby="treatments-heading" class="bg-canvas">
+        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6">
+          <h2 id="treatments-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-rs-slot="services.heading">What we treat</h2>
+          <p class="mt-3 max-w-2xl leading-7 text-muted" data-rs-slot="services.intro">A patient searches for their symptom, not for a treatment name. Write these as the thing that hurts, and say who each one suits.</p>
+
+          <div class="mt-10 grid gap-5 md:grid-cols-3">
+            <article class="flex flex-col rounded-3xl border border-hairline/50 bg-surface p-6" data-rs-slot-group="services.item">
+              <h3 class="font-display text-xl font-bold" data-rs-slot="services.item.title">Back, neck and shoulder pain</h3>
+              <p class="mt-3 flex-1 leading-7 text-muted" data-rs-slot="services.item.body">Assessment, hands-on treatment and a plan you can keep up with at home. Most people are seen within a week of ringing.</p>
+              <p class="mt-4 text-sm font-semibold text-accent" data-rs-slot="services.item.detail">45 minutes, no referral needed</p>
+            </article>
+            <article class="flex flex-col rounded-3xl border border-hairline/50 bg-surface p-6" data-rs-slot-group="services.item">
+              <h3 class="font-display text-xl font-bold" data-rs-slot="services.item.title">Injury, and getting back to it</h3>
+              <p class="mt-3 flex-1 leading-7 text-muted" data-rs-slot="services.item.body">Sport, work or a fall. We rehabilitate towards the thing you actually want to do again, and say honestly how long it takes.</p>
+              <p class="mt-4 text-sm font-semibold text-accent" data-rs-slot="services.item.detail">Reviewed every third visit</p>
+            </article>
+            <article class="flex flex-col rounded-3xl border border-hairline/50 bg-surface p-6" data-rs-slot-group="services.item">
+              <h3 class="font-display text-xl font-bold" data-rs-slot="services.item.title">Long-term and recurring conditions</h3>
+              <p class="mt-3 flex-1 leading-7 text-muted" data-rs-slot="services.item.body">Ongoing care for something that comes back, coordinated with your GP or specialist when that helps.</p>
+              <p class="mt-4 text-sm font-semibold text-accent" data-rs-slot="services.item.detail">Care plans welcome</p>
+            </article>
+          </div>
+
+          <!-- The sentence that keeps a health site honest. It is template copy
+               rather than a slot on purpose: see slots.md, "Not slotted". -->
+          <p class="mt-8 rounded-2xl border border-hairline/50 p-5 leading-7 text-muted">This page is general information, not a diagnosis, and it does not replace advice about your own circumstances. If this is an emergency, call your local emergency number rather than this practice.</p>
+        </div>
+      </section>
+
+      <!-- ─── Practitioners ────────────────────────────────────────────── -->
+      <section id="team" aria-labelledby="team-heading" class="border-y border-hairline/40 bg-surface">
+        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6">
+          <h2 id="team-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-rs-slot="team.heading">Who you will see</h2>
+          <p class="mt-3 max-w-2xl leading-7 text-muted" data-rs-slot="team.intro">Names, registrations and what each of them actually spends the week doing. Replace the placeholder portraits with real photographs before launch.</p>
+
+          <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="rounded-3xl border border-hairline/50 bg-canvas p-6" data-rs-slot-group="team.member">
+              <img
+                data-rs-slot="team.member.image"
+                data-rs-slot-alt="team.member.image_alt"
+                src="assets/portrait-placeholder.svg"
+                alt="Placeholder portrait. Replace with a photograph of this practitioner."
+                width="400"
+                height="400"
+                class="h-24 w-24 rounded-2xl border border-hairline/50"
+              />
+              <h3 class="mt-4 font-display text-lg font-bold" data-rs-slot="team.member.name">Practitioner name</h3>
+              <p class="text-sm font-semibold text-accent" data-rs-slot="team.member.role">Title, and registration number</p>
+              <p class="mt-3 leading-7 text-muted" data-rs-slot="team.member.body">Two sentences: what they treat most, and anything a patient would want to know before booking with them rather than somebody else.</p>
+            </article>
+            <article class="rounded-3xl border border-hairline/50 bg-canvas p-6" data-rs-slot-group="team.member">
+              <img
+                data-rs-slot="team.member.image"
+                data-rs-slot-alt="team.member.image_alt"
+                src="assets/portrait-placeholder.svg"
+                alt="Placeholder portrait. Replace with a photograph of this practitioner."
+                width="400"
+                height="400"
+                class="h-24 w-24 rounded-2xl border border-hairline/50"
+              />
+              <h3 class="mt-4 font-display text-lg font-bold" data-rs-slot="team.member.name">Practitioner name</h3>
+              <p class="text-sm font-semibold text-accent" data-rs-slot="team.member.role">Title, and registration number</p>
+              <p class="mt-3 leading-7 text-muted" data-rs-slot="team.member.body">Say which languages they speak, and whether they see children. Both are the reason a particular patient picks a particular practitioner.</p>
+            </article>
+            <article class="rounded-3xl border border-hairline/50 bg-canvas p-6" data-rs-slot-group="team.member">
+              <img
+                data-rs-slot="team.member.image"
+                data-rs-slot-alt="team.member.image_alt"
+                src="assets/portrait-placeholder.svg"
+                alt="Placeholder portrait. Replace with a photograph of this practitioner."
+                width="400"
+                height="400"
+                class="h-24 w-24 rounded-2xl border border-hairline/50"
+              />
+              <h3 class="mt-4 font-display text-lg font-bold" data-rs-slot="team.member.name">Practitioner name</h3>
+              <p class="text-sm font-semibold text-accent" data-rs-slot="team.member.role">Title, and registration number</p>
+              <p class="mt-3 leading-7 text-muted" data-rs-slot="team.member.body">If somebody works part of the week, say which days here. It saves a phone call and it stops a booking that has to be moved.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Your first visit ─────────────────────────────────────────── -->
+      <section id="visit" aria-labelledby="visit-heading" class="bg-canvas">
+        <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+          <h2 id="visit-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-rs-slot="process.heading">Your first visit</h2>
+          <p class="mt-3 leading-7 text-muted" data-rs-slot="process.intro">Nobody enjoys walking into a room without knowing what happens next. This is the whole of it.</p>
+
+          <!-- The step number is the instance's position in the group and is
+               rendered by the template, not slotted: a number a generator wrote
+               into an instance can disagree with the order they are in. -->
+          <ol class="mt-8 space-y-5">
+            <li class="flex gap-5 rounded-3xl border border-hairline/50 p-5" data-rs-slot-group="process.step">
+              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent font-display font-bold text-on-accent" aria-hidden="true">1</span>
+              <div>
+                <h3 class="font-display text-lg font-bold" data-rs-slot="process.step.title">We talk about what brought you in</h3>
+                <p class="mt-2 leading-7 text-muted" data-rs-slot="process.step.body">History, what makes it worse, what you have already tried, and what you need to be able to do again.</p>
+              </div>
+            </li>
+            <li class="flex gap-5 rounded-3xl border border-hairline/50 p-5" data-rs-slot-group="process.step">
+              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent font-display font-bold text-on-accent" aria-hidden="true">2</span>
+              <div>
+                <h3 class="font-display text-lg font-bold" data-rs-slot="process.step.title">An examination, and an explanation</h3>
+                <p class="mt-2 leading-7 text-muted" data-rs-slot="process.step.body">We assess, then tell you what we think is going on in plain words, including when we are not certain.</p>
+              </div>
+            </li>
+            <li class="flex gap-5 rounded-3xl border border-hairline/50 p-5" data-rs-slot-group="process.step">
+              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent font-display font-bold text-on-accent" aria-hidden="true">3</span>
+              <div>
+                <h3 class="font-display text-lg font-bold" data-rs-slot="process.step.title">Treatment starts the same day</h3>
+                <p class="mt-2 leading-7 text-muted" data-rs-slot="process.step.body">You leave with something done and something to do, and a clear idea of how many visits this is likely to take.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ─── What it costs ────────────────────────────────────────────────
+           The one section in this template that is a real <table>. The hours
+           list below is two columns of free text and stays a <dl>; this is
+           three columns with a heading row, and the headings and the caption
+           are slots rather than template text, because the rows are the
+           practice's own and a column heading is what those rows mean.
+           ../SLOTS.md, compare.*, has the argument, and RS026 in
+           ../validate.mjs holds the shape: a <tr> per instance inside a
+           <table>, a slotted <caption>, one <th scope="col"> per column and a
+           <th scope="row"> on the row label. -->
+      <section id="fees" aria-labelledby="fees-heading" class="border-t border-hairline/40 bg-canvas">
+        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6">
+          <h2 id="fees-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-rs-slot="compare.heading">What an appointment costs</h2>
+          <p class="mt-3 max-w-2xl leading-7 text-muted" data-rs-slot="compare.intro">The two appointments most patients book, side by side. Replace every figure with your own before this site goes live, and delete a row that does not apply here.</p>
+
+          <div class="mt-8 overflow-x-auto">
+            <table class="w-full min-w-[34rem] border-collapse text-left">
+              <caption class="sr-only" data-rs-slot="compare.caption">A first appointment and a follow-up compared: how long each takes, what happens, what it costs and what can be claimed back</caption>
+              <thead>
+                <tr class="border-b border-hairline/40">
+                  <th scope="col" class="py-3 pr-6 font-semibold" data-rs-slot="compare.col_subject">What you want to know</th>
+                  <th scope="col" class="py-3 pr-6 font-semibold" data-rs-slot="compare.col_left">First appointment</th>
+                  <th scope="col" class="py-3 font-semibold" data-rs-slot="compare.col_right">Follow-up</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-hairline/40">
+                <tr data-rs-slot-group="compare.item">
+                  <th scope="row" class="py-4 pr-6 align-top font-semibold" data-rs-slot="compare.item.subject">How long it takes</th>
+                  <td class="py-4 pr-6 align-top text-muted" data-rs-slot="compare.item.left">45 minutes</td>
+                  <td class="py-4 align-top text-muted" data-rs-slot="compare.item.right">30 minutes</td>
+                </tr>
+                <tr data-rs-slot-group="compare.item">
+                  <th scope="row" class="py-4 pr-6 align-top font-semibold" data-rs-slot="compare.item.subject">What happens</th>
+                  <td class="py-4 pr-6 align-top text-muted" data-rs-slot="compare.item.left">History, examination and treatment in the same visit, and a plan you leave with.</td>
+                  <td class="py-4 align-top text-muted" data-rs-slot="compare.item.right">A review of how the week went, treatment, and any change to the plan.</td>
+                </tr>
+                <tr data-rs-slot-group="compare.item">
+                  <th scope="row" class="py-4 pr-6 align-top font-semibold" data-rs-slot="compare.item.subject">What it costs</th>
+                  <td class="py-4 pr-6 align-top text-muted" data-rs-slot="compare.item.left">Add your first appointment fee here</td>
+                  <td class="py-4 align-top text-muted" data-rs-slot="compare.item.right">Add your follow-up fee here</td>
+                </tr>
+                <tr data-rs-slot-group="compare.item">
+                  <th scope="row" class="py-4 pr-6 align-top font-semibold" data-rs-slot="compare.item.subject">What you can claim back</th>
+                  <td class="py-4 pr-6 align-top text-muted" data-rs-slot="compare.item.left">Say which schemes you can process on the spot, and which you cannot</td>
+                  <td class="py-4 align-top text-muted" data-rs-slot="compare.item.right">Say which schemes you can process on the spot, and which you cannot</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Hours ────────────────────────────────────────────────────── -->
+      <section id="hours" aria-labelledby="hours-heading" class="border-y border-hairline/40 bg-surface">
+        <div class="mx-auto grid max-w-5xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2">
+          <div>
+            <h2 id="hours-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-rs-slot="hours.heading">When we are open</h2>
+            <p class="mt-3 leading-7 text-muted" data-rs-slot="hours.note">The last appointment of the day starts an hour before we close. Ring reception if you need a time outside these hours, because we can sometimes arrange one.</p>
+          </div>
+
+          <!-- A row per line the practice would actually write, which is why
+               hours.day.name is free text: "Monday to Thursday" and "Public
+               holidays" are both rows a clinic has. -->
+          <dl class="divide-y divide-hairline/40 border-y border-hairline/40">
+            <div class="flex items-baseline justify-between gap-6 py-3" data-rs-slot-group="hours.day">
+              <dt class="font-semibold" data-rs-slot="hours.day.name">Monday to Thursday</dt>
+              <dd class="text-muted" data-rs-slot="hours.day.time">7.30am to 7pm</dd>
+            </div>
+            <div class="flex items-baseline justify-between gap-6 py-3" data-rs-slot-group="hours.day">
+              <dt class="font-semibold" data-rs-slot="hours.day.name">Friday</dt>
+              <dd class="text-muted" data-rs-slot="hours.day.time">7.30am to 5pm</dd>
+            </div>
+            <div class="flex items-baseline justify-between gap-6 py-3" data-rs-slot-group="hours.day">
+              <dt class="font-semibold" data-rs-slot="hours.day.name">Saturday</dt>
+              <dd class="text-muted" data-rs-slot="hours.day.time">8am to 1pm</dd>
+            </div>
+            <div class="flex items-baseline justify-between gap-6 py-3" data-rs-slot-group="hours.day">
+              <dt class="font-semibold" data-rs-slot="hours.day.name">Sunday and public holidays</dt>
+              <dd class="text-muted" data-rs-slot="hours.day.time">Closed</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ─── Questions ────────────────────────────────────────────────── -->
+      <section id="faq" aria-labelledby="faq-heading" class="bg-canvas">
+        <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+          <h2 id="faq-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-rs-slot="faq.heading">Questions before you book</h2>
+          <p class="mt-3 leading-7 text-muted" data-rs-slot="faq.intro">The ones reception is asked every day. Answer them for your own practice and delete anything that is not true here.</p>
+
+          <div class="mt-8 divide-y divide-hairline/40 border-y border-hairline/40">
+            <details class="group py-4" data-rs-slot-group="faq.item">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
+                <span data-rs-slot="faq.item.question">Do I need a referral?</span>
+                <span class="shrink-0 text-accent transition group-open:rotate-45" aria-hidden="true">&plus;</span>
+              </summary>
+              <p class="mt-2 leading-7 text-muted" data-rs-slot="faq.item.answer">Not to book with us. Say here which arrangements do involve a referral or a care plan in your jurisdiction, and check the wording against the rules that apply to your profession.</p>
+            </details>
+            <details class="group py-4" data-rs-slot-group="faq.item">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
+                <span data-rs-slot="faq.item.question">What happens if I have to see somebody else?</span>
+                <span class="shrink-0 text-accent transition group-open:rotate-45" aria-hidden="true">&plus;</span>
+              </summary>
+              <p class="mt-2 leading-7 text-muted" data-rs-slot="faq.item.answer">Say what happens when the practitioner somebody has been seeing is away, and whether their notes go with them. Fees and rebates are in the table above rather than here, so there is one place to keep them up to date.</p>
+            </details>
+            <details class="group py-4" data-rs-slot-group="faq.item">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
+                <span data-rs-slot="faq.item.question">How long will I have to wait?</span>
+                <span class="shrink-0 text-accent transition group-open:rotate-45" aria-hidden="true">&plus;</span>
+              </summary>
+              <p class="mt-2 leading-7 text-muted" data-rs-slot="faq.item.answer">Give a real range rather than a comforting one, and say how a cancellation list works if you keep one. A patient who is told three days and waits nine does not come back.</p>
+            </details>
+            <details class="group py-4" data-rs-slot-group="faq.item">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
+                <span data-rs-slot="faq.item.question">What if I have to cancel?</span>
+                <span class="shrink-0 text-accent transition group-open:rotate-45" aria-hidden="true">&plus;</span>
+              </summary>
+              <p class="mt-2 leading-7 text-muted" data-rs-slot="faq.item.answer">State the notice period and any fee here, before somebody books rather than after they miss. It is the sentence that decides whether a cancellation policy feels fair.</p>
+            </details>
+            <details class="group py-4" data-rs-slot-group="faq.item">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
+                <span data-rs-slot="faq.item.question">Is the practice accessible, and is there parking?</span>
+                <span class="shrink-0 text-accent transition group-open:rotate-45" aria-hidden="true">&plus;</span>
+              </summary>
+              <p class="mt-2 leading-7 text-muted" data-rs-slot="faq.item.answer">Describe the entrance, the stairs or the lift, and the parking honestly. Somebody in pain is deciding whether they can physically get to you, and a vague answer reads as a no.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Contact ──────────────────────────────────────────────────── -->
+      <section id="contact" aria-labelledby="contact-heading" class="bg-ink text-canvas">
+        <div class="mx-auto grid max-w-5xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2">
+          <div>
+            <h2 id="contact-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-rs-slot="contact.heading">Book an appointment</h2>
+            <p class="mt-3 max-w-md leading-8 text-surface" data-rs-slot="contact.intro">Ring reception and you will be booked in on the call. Email is fine for anything that is not urgent, and we answer the same day we open.</p>
+
+            <!-- No form, and in a health practice that matters more than usual:
+                 there is no server behind this site to receive one, a form that
+                 posts nowhere loses a booking somebody was relying on, and a
+                 free-text field invites a patient to send clinical details
+                 through a channel nobody chose for that purpose. An agency with
+                 its own endpoint can add a form and point its action at the
+                 contact.form_action slot. A practice with an online booking
+                 provider links to it as an ordinary outbound link. -->
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="tel:+0000000000" data-rs-slot="contact.phone_href" class="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent hover:bg-accent/90">Call reception</a>
+              <a href="mailto:contact@knowbeforeyougo.au" data-rs-slot="contact.email_href" class="rounded-full border border-canvas/40 px-6 py-3 text-sm font-semibold hover:bg-canvas/10">Send an email</a>
+            </div>
+
+            <p class="mt-6 max-w-md text-sm leading-6 text-surface">Please do not send clinical details or anything urgent by email. If this is an emergency, call your local emergency number.</p>
+          </div>
+
+          <dl class="grid gap-5 sm:grid-cols-2">
+            <div class="rounded-2xl border border-canvas/15 p-5">
+              <dt class="text-xs font-semibold uppercase tracking-wider text-surface">Address</dt>
+              <dd class="mt-1 leading-7" data-rs-slot="contact.address">Add your street address here</dd>
+            </div>
+            <div class="rounded-2xl border border-canvas/15 p-5">
+              <dt class="text-xs font-semibold uppercase tracking-wider text-surface">Phone</dt>
+              <dd class="mt-1 leading-7"><a href="tel:+0000000000" data-rs-slot="contact.phone_href" class="underline decoration-canvas/40 underline-offset-4 hover:decoration-canvas"><span data-rs-slot="contact.phone">Add your phone number</span></a></dd>
+            </div>
+            <div class="rounded-2xl border border-canvas/15 p-5">
+              <dt class="text-xs font-semibold uppercase tracking-wider text-surface">Email</dt>
+              <dd class="mt-1 leading-7"><a href="mailto:contact@knowbeforeyougo.au" data-rs-slot="contact.email_href" class="underline decoration-canvas/40 underline-offset-4 hover:decoration-canvas"><span data-rs-slot="contact.email">contact@knowbeforeyougo.au</span></a></dd>
+            </div>
+            <div class="rounded-2xl border border-canvas/15 p-5">
+              <dt class="text-xs font-semibold uppercase tracking-wider text-surface">Open</dt>
+              <dd class="mt-1 leading-7" data-rs-slot="contact.hours">Monday to Saturday, early and late appointments</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="border-t border-hairline/40 bg-canvas">
+      <div class="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <div class="flex items-center gap-3">
+              <img src="assets/logo.svg" alt="" aria-hidden="true" width="40" height="40" class="h-8 w-8" />
+              <span class="font-display text-lg font-bold tracking-tight" data-rs-slot="business.name">Know Before You Go</span>
+            </div>
+            <p class="mt-4 max-w-xs leading-7 text-muted" data-rs-slot="business.tagline">Independent information on the risks and     evidence around spinal fusion surgery, so people can make an     informed decision. An initiative of the Workers Insurance     Association of NSW.</p>
+          </div>
+
+          <nav aria-label="Footer">
+            <h2 class="text-xs font-semibold uppercase tracking-wider">The practice</h2>
+            <ul class="mt-4 space-y-2 text-muted">
+              <li><a href="#treatments" class="hover:text-accent">What we treat</a></li>
+              <li><a href="#team" class="hover:text-accent">Practitioners</a></li>
+              <li><a href="#hours" class="hover:text-accent">Hours and fees</a></li>
+              <li><a href="#contact" class="hover:text-accent">Book an appointment</a></li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Legal">
+            <h2 class="text-xs font-semibold uppercase tracking-wider">Legal</h2>
+            <ul class="mt-4 space-y-2 text-muted">
+              <li><a href="privacy.html" class="hover:text-accent">Privacy policy</a></li>
+              <li><a href="terms.html" class="hover:text-accent">Terms of use</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="mt-10 flex flex-col gap-3 border-t border-hairline/40 pt-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+          <p data-rs-slot="footer.blurb">Built to be edited. Replace this line with something worth reading.</p>
+          <p data-rs-slot="footer.copyright">&copy; Your business name</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "template": {
+    "slug": "willow",
+    "version": "1.3.0"
+  },
+  "source_repo": "rocket-sites/knowbeforeyougo",
+  "site": {
+    "title": "Know Before You Go",
+    "description": "Independent information on the risks and     evidence around spinal fusion surgery, so people can make an     informed decision. An initiative of the Workers Insurance     Association of NSW.",
+    "canonical_url": "https://example.com/"
+  },
+  "brand": {
+    "color-canvas": "#ffffff",
+    "color-surface": "#eef4f2",
+    "color-ink": "#12211d",
+    "color-muted": "#4c5f5a",
+    "color-accent": "#136457",
+    "color-on-accent": "#ffffff",
+    "color-hairline": "#788a85",
+    "font-sans": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+    "font-display": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+    "logo": "assets/logo.svg",
+    "favicon": "assets/favicon.svg"
+  },
+  "brand_dark": {
+    "color-canvas": "#0f1715",
+    "color-surface": "#18231f",
+    "color-ink": "#e6efeb",
+    "color-muted": "#a3b3ae",
+    "color-accent": "#57c9ac",
+    "color-on-accent": "#062019",
+    "color-hairline": "#697b76"
+  },
+  "slots": {
+    "behaviour.dark_mode": "off",
+    "behaviour.mobile_nav": "off",
+    "behaviour.faq_accordion": "off",
+    "site.title": "Know Before You Go",
+    "site.description": "Independent information on the risks and     evidence around spinal fusion surgery, so people can make an     informed decision. An initiative of the Workers Insurance     Association of NSW.",
+    "site.canonical": "https://example.com/",
+    "site.og_image": "https://example.com/assets/og-image.png",
+    "business.name": "Know Before You Go",
+    "business.tagline": "Independent information on the risks and     evidence around spinal fusion surgery, so people can make an     informed decision. An initiative of the Workers Insurance     Association of NSW.",
+    "nav.cta": "Book an appointment",
+    "nav.cta_href": "index.html#contact",
+    "hero.eyebrow": "Taking new patients",
+    "hero.heading": "Care that starts by listening to the whole problem",
+    "hero.body": "Appointments are long enough to examine, explain and treat in the same visit. You see the same practitioner each time, and you will always be told what the plan is before it starts.",
+    "hero.cta_primary": "Book an appointment",
+    "hero.cta_primary_href": "#contact",
+    "hero.cta_secondary": "See what we treat",
+    "hero.cta_secondary_href": "#treatments",
+    "services.heading": "What we treat",
+    "services.intro": "A patient searches for their symptom, not for a treatment name. Write these as the thing that hurts, and say who each one suits.",
+    "team.heading": "Who you will see",
+    "team.intro": "Names, registrations and what each of them actually spends the week doing. Replace the placeholder portraits with real photographs before launch.",
+    "process.heading": "Your first visit",
+    "process.intro": "Nobody enjoys walking into a room without knowing what happens next. This is the whole of it.",
+    "compare.heading": "What an appointment costs",
+    "compare.intro": "The two appointments most patients book, side by side. Replace every figure with your own before this site goes live, and delete a row that does not apply here.",
+    "compare.caption": "A first appointment and a follow-up compared: how long each takes, what happens, what it costs and what can be claimed back",
+    "compare.col_subject": "What you want to know",
+    "compare.col_left": "First appointment",
+    "compare.col_right": "Follow-up",
+    "hours.heading": "When we are open",
+    "hours.note": "The last appointment of the day starts an hour before we close. Ring reception if you need a time outside these hours, because we can sometimes arrange one.",
+    "faq.heading": "Questions before you book",
+    "faq.intro": "The ones reception is asked every day. Answer them for your own practice and delete anything that is not true here.",
+    "contact.heading": "Book an appointment",
+    "contact.intro": "Ring reception and you will be booked in on the call. Email is fine for anything that is not urgent, and we answer the same day we open.",
+    "contact.address": "Add your street address here",
+    "contact.phone": "Add your phone number",
+    "contact.phone_href": "tel:+0000000000",
+    "contact.email": "contact@knowbeforeyougo.au",
+    "contact.email_href": "mailto:contact@knowbeforeyougo.au",
+    "contact.hours": "Monday to Saturday, early and late appointments",
+    "footer.blurb": "Built to be edited. Replace this line with something worth reading.",
+    "footer.copyright": "© Your business name"
+  },
+  "groups": {
+    "services.item": [
+      {
+        "title": "Back, neck and shoulder pain",
+        "body": "Assessment, hands-on treatment and a plan you can keep up with at home. Most people are seen within a week of ringing.",
+        "detail": "45 minutes, no referral needed"
+      },
+      {
+        "title": "Injury, and getting back to it",
+        "body": "Sport, work or a fall. We rehabilitate towards the thing you actually want to do again, and say honestly how long it takes.",
+        "detail": "Reviewed every third visit"
+      },
+      {
+        "title": "Long-term and recurring conditions",
+        "body": "Ongoing care for something that comes back, coordinated with your GP or specialist when that helps.",
+        "detail": "Care plans welcome"
+      }
+    ],
+    "team.member": [
+      {
+        "name": "Practitioner name",
+        "role": "Title, and registration number",
+        "body": "Two sentences: what they treat most, and anything a patient would want to know before booking with them rather than somebody else.",
+        "image": "assets/portrait-placeholder.svg",
+        "image_alt": "Placeholder portrait. Replace with a photograph of this practitioner."
+      },
+      {
+        "name": "Practitioner name",
+        "role": "Title, and registration number",
+        "body": "Say which languages they speak, and whether they see children. Both are the reason a particular patient picks a particular practitioner.",
+        "image": "assets/portrait-placeholder.svg",
+        "image_alt": "Placeholder portrait. Replace with a photograph of this practitioner."
+      },
+      {
+        "name": "Practitioner name",
+        "role": "Title, and registration number",
+        "body": "If somebody works part of the week, say which days here. It saves a phone call and it stops a booking that has to be moved.",
+        "image": "assets/portrait-placeholder.svg",
+        "image_alt": "Placeholder portrait. Replace with a photograph of this practitioner."
+      }
+    ],
+    "process.step": [
+      {
+        "title": "We talk about what brought you in",
+        "body": "History, what makes it worse, what you have already tried, and what you need to be able to do again."
+      },
+      {
+        "title": "An examination, and an explanation",
+        "body": "We assess, then tell you what we think is going on in plain words, including when we are not certain."
+      },
+      {
+        "title": "Treatment starts the same day",
+        "body": "You leave with something done and something to do, and a clear idea of how many visits this is likely to take."
+      }
+    ],
+    "compare.item": [
+      {
+        "subject": "How long it takes",
+        "left": "45 minutes",
+        "right": "30 minutes"
+      },
+      {
+        "subject": "What happens",
+        "left": "History, examination and treatment in the same visit, and a plan you leave with.",
+        "right": "A review of how the week went, treatment, and any change to the plan."
+      },
+      {
+        "subject": "What it costs",
+        "left": "Add your first appointment fee here",
+        "right": "Add your follow-up fee here"
+      },
+      {
+        "subject": "What you can claim back",
+        "left": "Say which schemes you can process on the spot, and which you cannot",
+        "right": "Say which schemes you can process on the spot, and which you cannot"
+      }
+    ],
+    "hours.day": [
+      {
+        "name": "Monday to Thursday",
+        "time": "7.30am to 7pm"
+      },
+      {
+        "name": "Friday",
+        "time": "7.30am to 5pm"
+      },
+      {
+        "name": "Saturday",
+        "time": "8am to 1pm"
+      },
+      {
+        "name": "Sunday and public holidays",
+        "time": "Closed"
+      }
+    ],
+    "faq.item": [
+      {
+        "question": "Do I need a referral?",
+        "answer": "Not to book with us. Say here which arrangements do involve a referral or a care plan in your jurisdiction, and check the wording against the rules that apply to your profession."
+      },
+      {
+        "question": "What happens if I have to see somebody else?",
+        "answer": "Say what happens when the practitioner somebody has been seeing is away, and whether their notes go with them. Fees and rebates are in the table above rather than here, so there is one place to keep them up to date."
+      },
+      {
+        "question": "How long will I have to wait?",
+        "answer": "Give a real range rather than a comforting one, and say how a cancellation list works if you keep one. A patient who is told three days and waits nine does not come back."
+      },
+      {
+        "question": "What if I have to cancel?",
+        "answer": "State the notice period and any fee here, before somebody books rather than after they miss. It is the sentence that decides whether a cancellation policy feels fair."
+      },
+      {
+        "question": "Is the practice accessible, and is there parking?",
+        "answer": "Describe the entrance, the stairs or the lift, and the parking honestly. Somebody in pain is deciding whether they can physically get to you, and a vague answer reads as a no."
+      }
+    ],
+    "rs.review_banner": [
+      {
+        "heading": "This page has not been reviewed yet",
+        "body": "It is a starting point, not legal advice. Every bracketed placeholder below must be replaced by a person, and the whole document read by a qualified lawyer in the relevant jurisdiction, before this site goes live. Delete the element carrying data-rs-slot-group=\"rs.review_banner\" once that is done."
+      }
+    ]
+  },
+  "legal": {
+    "entity": null,
+    "jurisdiction": null,
+    "contact": null
+  }
+}

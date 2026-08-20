@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true" focusable="false">
+  <!-- The header mark: a stem with two leaves. It sits next to the business
+       name in text, so it is decorative and the page marks it aria-hidden.
+       Replace this one file to change the mark; nothing in the HTML needs to
+       move. -->
+  <rect width="40" height="40" rx="10" fill="#136457"/>
+  <g fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round">
+    <path d="M20 32V14"/>
+    <path d="M20 19c-4.4 0-7.5-2.8-7.5-7 4.4 0 7.5 2.8 7.5 7Z"/>
+    <path d="M20 24c4.4 0 7.5-2.8 7.5-7-4.4 0-7.5 2.8-7.5 7Z"/>
+  </g>
+</svg>

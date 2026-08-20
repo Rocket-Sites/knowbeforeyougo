@@ -1,0 +1,76 @@
+/* Willow - Tailwind build input.
+ *
+ * The publisher runs the Tailwind CLI over this once in CI and emits a purged
+ * styles.css next to the pages. styles.css is gitignored: it is generated, and
+ * a committed copy drifts away from its input.
+ *
+ *   cd templates && npm install && npm run build:willow
+ *
+ * There is no tailwind.config.cjs, here or in any template (#167). The brand
+ * values live in rocket-site.json under `brand` and `brand_dark`, as DATA, and
+ * the publisher generates the `@theme` block this file is built with. So this
+ * file does not compile on its own: `npm run build:willow` composes the two.
+ * Do not add `@import "tailwindcss"` or a relative `@source` here; both belong
+ * to the composed input and both are wrong in this file. See
+ * templates/CONVENTIONS.md, "Building the stylesheet".
+ *
+ * There is no web font here either, and in this category that is a patient
+ * privacy point as well as a performance one: a font request tells a third
+ * party that this device loaded a page about a medical condition. The system
+ * stack tells nobody anything.
+ *
+ * Everything below is a rule that cannot be expressed as a class on an element
+ * the author controls.
+ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* The sticky header must not cover the heading a nav link jumps to. */
+    scroll-padding-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* One focus ring, declared once, rather than three utilities repeated on
+     every focusable element. See templates/pocket/slots.md for the byte
+     argument; here it is simply less to read. */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  /* The user-agent marker on the native disclosures: the mobile nav and the
+     FAQ. This template draws its own "+" glyph instead. */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* ── The dark mode behaviour (#166) ──────────────────────────────────
+   *
+   * The palette is DATA, in rocket-site.json's `brand_dark`, and the publisher
+   * generates the `[data-rs-theme="dark"]` block that overrides the tokens.
+   * What is here is design rather than brand: when the toggle is on screen.
+   *
+   * A dark palette earns its place here rather than being a checkbox: this is
+   * a site read at 11pm by somebody who cannot sleep because their back hurts.
+   *
+   * THE TOGGLE IS HIDDEN UNLESS THE BEHAVIOUR IS ON, and CSS hides it rather
+   * than script, so it stays hidden for a visitor with scripting off instead of
+   * appearing and doing nothing. */
+  [data-rs-theme-toggle] {
+    display: none;
+  }
+
+  html[data-rs-theme] [data-rs-theme-toggle] {
+    display: inline-flex;
+  }
+
+  html[data-rs-theme="dark"] {
+    color-scheme: dark;
+  }
+}

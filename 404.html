@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- A 404 carries this too, so a client's not-found page is still
+         resolvable back to its repo by the extension. -->
+    <meta name="source-repo" content="rocket-sites/knowbeforeyougo" />
+
+    <title>Page not found</title>
+    <meta name="description" content="That page does not exist on this site." />
+    <meta name="robots" content="noindex" />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta name="rs-behaviour-dark-mode" content="off" data-rs-slot="behaviour.dark_mode" />
+
+    <!-- Not deferred: it sets the theme before the body is painted. -->
+    <script src="behaviours.js"></script>
+  </head>
+
+  <body class="flex min-h-screen flex-col bg-canvas font-sans text-ink antialiased">
+    <a href="#main" class="sr-only rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-canvas focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60]">Skip to main content</a>
+
+    <header id="header" class="border-b border-hairline/40 bg-canvas">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6" aria-label="Primary">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.svg" alt="" aria-hidden="true" width="40" height="40" class="h-9 w-9" />
+          <span class="font-display text-xl font-bold tracking-tight" data-rs-slot="business.name">Know Before You Go</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <a href="index.html#contact" class="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-on-accent hover:bg-accent/90" data-rs-slot="nav.cta_href"><span data-rs-slot="nav.cta">Book an appointment</span></a>
+          <button type="button" data-rs-theme-toggle aria-pressed="false" class="h-10 w-10 items-center justify-center rounded-xl border border-hairline">
+            <span class="sr-only">Switch between the light and dark theme</span>
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor" stroke="none" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1" class="mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center px-4 py-20 sm:px-6">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Error 404</p>
+      <h1 class="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">That page does not exist</h1>
+      <p class="mt-4 leading-8 text-muted">The address may have been mistyped, or the page moved. Nothing is broken at your end, and reception can still book you in.</p>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="index.html" class="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent hover:bg-accent/90">Back to the home page</a>
+        <a href="index.html#contact" class="rounded-full border border-hairline px-6 py-3 text-sm font-semibold hover:bg-surface">Book an appointment</a>
+      </div>
+
+      <nav aria-label="Site sections" class="mt-12 border-t border-hairline/40 pt-8">
+        <h2 class="text-xs font-semibold uppercase tracking-wider">Or try one of these</h2>
+        <ul class="mt-4 grid gap-2 text-muted sm:grid-cols-2">
+          <li><a href="index.html#treatments" class="hover:text-accent">What we treat</a></li>
+          <li><a href="index.html#team" class="hover:text-accent">Practitioners</a></li>
+          <li><a href="index.html#visit" class="hover:text-accent">Your first visit</a></li>
+          <li><a href="index.html#hours" class="hover:text-accent">Hours and fees</a></li>
+        </ul>
+      </nav>
+    </main>
+
+    <footer id="footer" class="border-t border-hairline/40 bg-canvas">
+      <div class="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <div class="flex items-center gap-3">
+              <img src="assets/logo.svg" alt="" aria-hidden="true" width="40" height="40" class="h-8 w-8" />
+              <span class="font-display text-lg font-bold tracking-tight" data-rs-slot="business.name">Know Before You Go</span>
+            </div>
+            <p class="mt-4 max-w-xs leading-7 text-muted" data-rs-slot="business.tagline">Independent information on the risks and     evidence around spinal fusion surgery, so people can make an     informed decision. An initiative of the Workers Insurance     Association of NSW.</p>
+          </div>
+          <nav aria-label="Footer">
+            <h2 class="text-xs font-semibold uppercase tracking-wider">The practice</h2>
+            <ul class="mt-4 space-y-2 text-muted">
+              <li><a href="index.html#treatments" class="hover:text-accent">What we treat</a></li>
+              <li><a href="index.html#team" class="hover:text-accent">Practitioners</a></li>
+              <li><a href="index.html#hours" class="hover:text-accent">Hours and fees</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Legal">
+            <h2 class="text-xs font-semibold uppercase tracking-wider">Legal</h2>
+            <ul class="mt-4 space-y-2 text-muted">
+              <li><a href="privacy.html" class="hover:text-accent">Privacy policy</a></li>
+              <li><a href="terms.html" class="hover:text-accent">Terms of use</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="mt-10 flex flex-col gap-3 border-t border-hairline/40 pt-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+          <p data-rs-slot="footer.blurb">Built to be edited. Replace this line with something worth reading.</p>
+          <p data-rs-slot="footer.copyright">&copy; Your business name</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
