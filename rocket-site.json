@@ -12,25 +12,25 @@
   },
   "brand": {
     "color-canvas": "#ffffff",
-    "color-surface": "#eef4f2",
-    "color-ink": "#12211d",
-    "color-muted": "#4c5f5a",
-    "color-accent": "#136457",
+    "color-surface": "#f4f4f4",
+    "color-ink": "#111827",
+    "color-muted": "#4b5563",
+    "color-accent": "#0a2540",
     "color-on-accent": "#ffffff",
-    "color-hairline": "#788a85",
+    "color-hairline": "#6b7280",
     "font-sans": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
     "font-display": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
     "logo": "assets/logo.svg",
     "favicon": "assets/favicon.svg"
   },
   "brand_dark": {
-    "color-canvas": "#0f1715",
-    "color-surface": "#18231f",
-    "color-ink": "#e6efeb",
-    "color-muted": "#a3b3ae",
-    "color-accent": "#57c9ac",
-    "color-on-accent": "#062019",
-    "color-hairline": "#697b76"
+    "color-canvas": "#111827",
+    "color-surface": "#1f2937",
+    "color-ink": "#f4f4f4",
+    "color-muted": "#9ca3af",
+    "color-accent": "#6ba5e7",
+    "color-on-accent": "#0a2540",
+    "color-hairline": "#79838f"
   },
   "slots": {
     "behaviour.dark_mode": "off",
