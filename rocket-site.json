@@ -13,9 +13,9 @@
   "brand": {
     "color-canvas": "#ffffff",
     "color-surface": "#f4f4f4",
-    "color-ink": "#111827",
+    "color-ink": "#0a2540",
     "color-muted": "#4b5563",
-    "color-accent": "#0a2540",
+    "color-accent": "#2e8b57",
     "color-on-accent": "#ffffff",
     "color-hairline": "#6b7280",
     "font-sans": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
