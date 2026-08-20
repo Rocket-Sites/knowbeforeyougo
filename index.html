@@ -108,42 +108,43 @@
 
     <main id="main" tabindex="-1">
       <!-- ─── Hero ─────────────────────────────────────────────────────── -->
-      <section id="hero" aria-labelledby="hero-heading" class="border-b border-hairline/40 bg-surface">
+      <section id="hero" aria-labelledby="hero-heading" class="border-b border-hairline/40 bg-gradient-to-b from-[#111827] to-[#4B5563]">
         <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:py-20">
-          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent" data-rs-slot="hero.eyebrow">Taking new patients</p>
-          <h1 id="hero-heading" class="mt-4 max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl" data-rs-slot="hero.heading">Care that starts by listening to the whole problem</h1>
-          <p class="mt-5 max-w-2xl text-lg leading-8 text-muted" data-rs-slot="hero.body">Appointments are long enough to examine, explain and treat in the same visit. You see the same practitioner each time, and you will always be told what the plan is before it starts.</p>
+          <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <h1 id="hero-heading" class="font-display text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl" data-rs-slot="hero.heading">Think <span class="text-accent">Twice</span></h1>
+              <figure class="mt-6">
+                <blockquote class="text-xl italic leading-8 text-white">
+                  <p data-rs-slot="hero.body">&ldquo;Spinal fusion is the riskiest type of surgery for back pain.&rdquo;</p>
+                </blockquote>
+                <figcaption class="mt-2 text-sm text-gray-400">&mdash; University of Sydney</figcaption>
+              </figure>
+            </div>
 
-          <!-- Both hero buttons carry their destination as a slot, the same
-               shape as nav.cta above: the href on the <a>, the label on a
-               <span> inside it, because one element carries one data-rs-slot.
-               A bare fragment is legal here and is not on nav.cta_href: these
-               two are marked on index.html only, so #contact resolves. A
-               practice whose bookings live elsewhere, or a business whose two
-               buttons are two differently addressed mailto: links, changes
-               them without touching the template. -->
-          <div class="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#contact" class="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent hover:bg-accent/90" data-rs-slot="hero.cta_primary_href"><span data-rs-slot="hero.cta_primary">Book an appointment</span></a>
-            <a href="#treatments" class="rounded-full border border-hairline px-6 py-3 text-sm font-semibold hover:bg-canvas" data-rs-slot="hero.cta_secondary_href"><span data-rs-slot="hero.cta_secondary">See what we treat</span></a>
+            <div class="rounded-2xl border border-white/20 bg-white/[0.08] p-6 backdrop-blur">
+              <dl class="space-y-5">
+                <div class="flex items-baseline justify-between gap-6">
+                  <dt class="text-4xl font-bold text-white">1 in 6</dt>
+                  <dd class="text-sm text-gray-300">have serious complications</dd>
+                </div>
+                <div class="flex items-baseline justify-between gap-6">
+                  <dt class="text-4xl font-bold text-white">1 in 5</dt>
+                  <dd class="text-sm text-gray-300">need revision surgery</dd>
+                </div>
+                <div class="flex items-baseline justify-between gap-6">
+                  <dt class="text-4xl font-bold text-white">3 in 4</dt>
+                  <dd class="text-sm text-gray-300">have limited recovery</dd>
+                </div>
+              </dl>
+            </div>
           </div>
 
-          <!-- The three facts that decide whether somebody in pain calls today.
-               They are the same slots as the contact section, by the
-               multiplicity rule: one name, one value, two places. -->
-          <dl class="mt-10 grid gap-4 border-t border-hairline/40 pt-6 sm:grid-cols-3">
-            <div>
-              <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Open</dt>
-              <dd class="mt-1 leading-7" data-rs-slot="contact.hours">Monday to Saturday, early and late appointments</dd>
-            </div>
-            <div>
-              <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Phone</dt>
-              <dd class="mt-1 leading-7"><a href="tel:+0000000000" class="underline underline-offset-4 hover:text-accent" data-rs-slot="contact.phone_href"><span data-rs-slot="contact.phone">Add your phone number</span></a></dd>
-            </div>
-            <div>
-              <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Where</dt>
-              <dd class="mt-1 leading-7" data-rs-slot="contact.address">Add your street address here</dd>
-            </div>
-          </dl>
+          <!-- Required slots hidden from view -->
+          <div class="sr-only">
+            <p data-rs-slot="hero.eyebrow">Taking new patients</p>
+            <a href="#contact" data-rs-slot="hero.cta_primary_href"><span data-rs-slot="hero.cta_primary">Book an appointment</span></a>
+            <a href="#treatments" data-rs-slot="hero.cta_secondary_href"><span data-rs-slot="hero.cta_secondary">See what we treat</span></a>
+          </div>
         </div>
       </section>
 
