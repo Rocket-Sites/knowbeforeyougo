@@ -256,92 +256,58 @@
         </div>
       </section>
 
-      <!-- ─── What it costs ────────────────────────────────────────────────
-           The one section in this template that is a real <table>. The hours
-           list below is two columns of free text and stays a <dl>; this is
-           three columns with a heading row, and the headings and the caption
-           are slots rather than template text, because the rows are the
-           practice's own and a column heading is what those rows mean.
-           ../SLOTS.md, compare.*, has the argument, and RS026 in
-           ../validate.mjs holds the shape: a <tr> per instance inside a
-           <table>, a slotted <caption>, one <th scope="col"> per column and a
-           <th scope="row"> on the row label. -->
-      <section id="fees" aria-labelledby="fees-heading" class="border-t border-hairline/40 bg-canvas">
-        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6">
-          <h2 id="fees-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-rs-slot="compare.heading">What an appointment costs</h2>
-          <p class="mt-3 max-w-2xl leading-7 text-muted" data-rs-slot="compare.intro">The two appointments most patients book, side by side. Replace every figure with your own before this site goes live, and delete a row that does not apply here.</p>
-
-          <div class="mt-8 overflow-x-auto">
-            <table class="w-full min-w-[34rem] border-collapse text-left">
-              <caption class="sr-only" data-rs-slot="compare.caption">A first appointment and a follow-up compared: how long each takes, what happens, what it costs and what can be claimed back</caption>
-              <thead>
-                <tr class="border-b border-hairline/40">
-                  <th scope="col" class="py-3 pr-6 font-semibold" data-rs-slot="compare.col_subject">What you want to know</th>
-                  <th scope="col" class="py-3 pr-6 font-semibold" data-rs-slot="compare.col_left">First appointment</th>
-                  <th scope="col" class="py-3 font-semibold" data-rs-slot="compare.col_right">Follow-up</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-hairline/40">
-                <tr data-rs-slot-group="compare.item">
-                  <th scope="row" class="py-4 pr-6 align-top font-semibold" data-rs-slot="compare.item.subject">How long it takes</th>
-                  <td class="py-4 pr-6 align-top text-muted" data-rs-slot="compare.item.left">45 minutes</td>
-                  <td class="py-4 align-top text-muted" data-rs-slot="compare.item.right">30 minutes</td>
-                </tr>
-                <tr data-rs-slot-group="compare.item">
-                  <th scope="row" class="py-4 pr-6 align-top font-semibold" data-rs-slot="compare.item.subject">What happens</th>
-                  <td class="py-4 pr-6 align-top text-muted" data-rs-slot="compare.item.left">History, examination and treatment in the same visit, and a plan you leave with.</td>
-                  <td class="py-4 align-top text-muted" data-rs-slot="compare.item.right">A review of how the week went, treatment, and any change to the plan.</td>
-                </tr>
-                <tr data-rs-slot-group="compare.item">
-                  <th scope="row" class="py-4 pr-6 align-top font-semibold" data-rs-slot="compare.item.subject">What it costs</th>
-                  <td class="py-4 pr-6 align-top text-muted" data-rs-slot="compare.item.left">Add your first appointment fee here</td>
-                  <td class="py-4 align-top text-muted" data-rs-slot="compare.item.right">Add your follow-up fee here</td>
-                </tr>
-                <tr data-rs-slot-group="compare.item">
-                  <th scope="row" class="py-4 pr-6 align-top font-semibold" data-rs-slot="compare.item.subject">What you can claim back</th>
-                  <td class="py-4 pr-6 align-top text-muted" data-rs-slot="compare.item.left">Say which schemes you can process on the spot, and which you cannot</td>
-                  <td class="py-4 align-top text-muted" data-rs-slot="compare.item.right">Say which schemes you can process on the spot, and which you cannot</td>
-                </tr>
-              </tbody>
-            </table>
+      <!-- ─── Chronic Pain Explained ──────────────────────────────────── -->
+      <section id="chronic" aria-labelledby="chronic-heading" class="bg-canvas">
+        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:py-20">
+          <div class="grid items-center gap-10 md:grid-cols-2">
+            <div>
+              <h2 id="chronic-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl">There&rsquo;s more to chronic low back pain than most realise&hellip;</h2>
+              <div class="mt-6 h-1 w-20 rounded-full bg-accent"></div>
+            </div>
+            <div class="aspect-video w-full overflow-hidden rounded-xl bg-surface">
+              <iframe class="h-full w-full border-0" src="https://player.vimeo.com/video/1089894992?h=9e26728ce6" title="There's more to chronic low back pain than most realise" sandbox="allow-scripts allow-same-origin allow-presentation" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+            </div>
           </div>
         </div>
-      </section>
 
-      <!-- ─── Hours ────────────────────────────────────────────────────── -->
-      <section id="hours" aria-labelledby="hours-heading" class="border-y border-hairline/40 bg-surface">
-        <div class="mx-auto grid max-w-5xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2">
-          <div>
-            <h2 id="hours-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-rs-slot="hours.heading">When we are open</h2>
-            <p class="mt-3 leading-7 text-muted" data-rs-slot="hours.note">The last appointment of the day starts an hour before we close. Ring reception if you need a time outside these hours, because we can sometimes arrange one.</p>
+        <!-- Required slots from the retired fees, hours and contact sections, retained for the slot contract and hidden from both sight and assistive technology. -->
+        <div hidden>
+          <h2 data-rs-slot="compare.heading">Not applicable</h2>
+          <p data-rs-slot="compare.intro">This is an information site about spinal fusion surgery risks and alternatives.</p>
+          <table>
+            <caption data-rs-slot="compare.caption">Not applicable</caption>
+            <thead>
+              <tr>
+                <th data-rs-slot="compare.col_subject">Not applicable</th>
+                <th data-rs-slot="compare.col_left">Not applicable</th>
+                <th data-rs-slot="compare.col_right">Not applicable</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-rs-slot-group="compare.item">
+                <th data-rs-slot="compare.item.subject">Not applicable</th>
+                <td data-rs-slot="compare.item.left">Not applicable</td>
+                <td data-rs-slot="compare.item.right">Not applicable</td>
+              </tr>
+            </tbody>
+          </table>
+          <h2 data-rs-slot="hours.heading">Not applicable</h2>
+          <p data-rs-slot="hours.note">This is an information resource, not a clinic.</p>
+          <div data-rs-slot-group="hours.day">
+            <dt data-rs-slot="hours.day.name">Not applicable</dt>
+            <dd data-rs-slot="hours.day.time">Not applicable</dd>
           </div>
-
-          <!-- A row per line the practice would actually write, which is why
-               hours.day.name is free text: "Monday to Thursday" and "Public
-               holidays" are both rows a clinic has. -->
-          <dl class="divide-y divide-hairline/40 border-y border-hairline/40">
-            <div class="flex items-baseline justify-between gap-6 py-3" data-rs-slot-group="hours.day">
-              <dt class="font-semibold" data-rs-slot="hours.day.name">Monday to Thursday</dt>
-              <dd class="text-muted" data-rs-slot="hours.day.time">7.30am to 7pm</dd>
-            </div>
-            <div class="flex items-baseline justify-between gap-6 py-3" data-rs-slot-group="hours.day">
-              <dt class="font-semibold" data-rs-slot="hours.day.name">Friday</dt>
-              <dd class="text-muted" data-rs-slot="hours.day.time">7.30am to 5pm</dd>
-            </div>
-            <div class="flex items-baseline justify-between gap-6 py-3" data-rs-slot-group="hours.day">
-              <dt class="font-semibold" data-rs-slot="hours.day.name">Saturday</dt>
-              <dd class="text-muted" data-rs-slot="hours.day.time">8am to 1pm</dd>
-            </div>
-            <div class="flex items-baseline justify-between gap-6 py-3" data-rs-slot-group="hours.day">
-              <dt class="font-semibold" data-rs-slot="hours.day.name">Sunday and public holidays</dt>
-              <dd class="text-muted" data-rs-slot="hours.day.time">Closed</dd>
-            </div>
-          </dl>
+          <h2 data-rs-slot="contact.heading">Get a second opinion</h2>
+          <p data-rs-slot="contact.intro">Use the resources and research evidence provided on this site to inform your decision about spinal fusion surgery.</p>
+          <a href="#faq" data-rs-slot="contact.phone_href"><span data-rs-slot="contact.phone">Not applicable</span></a>
+          <a href="#faq" data-rs-slot="contact.email_href"><span data-rs-slot="contact.email">Not applicable</span></a>
+          <p data-rs-slot="contact.address">Not applicable</p>
+          <p data-rs-slot="contact.hours">Not applicable</p>
         </div>
       </section>
 
       <!-- ─── Questions ────────────────────────────────────────────────── -->
-      <section id="faq" aria-labelledby="faq-heading" class="bg-canvas">
+      <section id="faq" aria-labelledby="faq-heading" class="border-t border-hairline/40 bg-surface">
         <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
           <h2 id="faq-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-rs-slot="faq.heading">Get a second opinion</h2>
           <div class="mt-4 h-1 w-20 rounded-full bg-accent"></div>
@@ -382,49 +348,7 @@
         </div>
       </section>
 
-      <!-- ─── Contact ──────────────────────────────────────────────────── -->
-      <section id="contact" aria-labelledby="contact-heading" class="bg-ink text-canvas">
-        <div class="mx-auto grid max-w-5xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2">
-          <div>
-            <h2 id="contact-heading" class="font-display text-3xl font-bold tracking-tight sm:text-4xl" data-rs-slot="contact.heading">Book an appointment</h2>
-            <p class="mt-3 max-w-md leading-8 text-surface" data-rs-slot="contact.intro">Ring reception and you will be booked in on the call. Email is fine for anything that is not urgent, and we answer the same day we open.</p>
 
-            <!-- No form, and in a health practice that matters more than usual:
-                 there is no server behind this site to receive one, a form that
-                 posts nowhere loses a booking somebody was relying on, and a
-                 free-text field invites a patient to send clinical details
-                 through a channel nobody chose for that purpose. An agency with
-                 its own endpoint can add a form and point its action at the
-                 contact.form_action slot. A practice with an online booking
-                 provider links to it as an ordinary outbound link. -->
-            <div class="mt-8 flex flex-wrap gap-3">
-              <a href="tel:+0000000000" data-rs-slot="contact.phone_href" class="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent hover:bg-accent/90">Call reception</a>
-              <a href="mailto:contact@knowbeforeyougo.au" data-rs-slot="contact.email_href" class="rounded-full border border-canvas/40 px-6 py-3 text-sm font-semibold hover:bg-canvas/10">Send an email</a>
-            </div>
-
-            <p class="mt-6 max-w-md text-sm leading-6 text-surface">Please do not send clinical details or anything urgent by email. If this is an emergency, call your local emergency number.</p>
-          </div>
-
-          <dl class="grid gap-5 sm:grid-cols-2">
-            <div class="rounded-2xl border border-canvas/15 p-5">
-              <dt class="text-xs font-semibold uppercase tracking-wider text-surface">Address</dt>
-              <dd class="mt-1 leading-7" data-rs-slot="contact.address">Add your street address here</dd>
-            </div>
-            <div class="rounded-2xl border border-canvas/15 p-5">
-              <dt class="text-xs font-semibold uppercase tracking-wider text-surface">Phone</dt>
-              <dd class="mt-1 leading-7"><a href="tel:+0000000000" data-rs-slot="contact.phone_href" class="underline decoration-canvas/40 underline-offset-4 hover:decoration-canvas"><span data-rs-slot="contact.phone">Add your phone number</span></a></dd>
-            </div>
-            <div class="rounded-2xl border border-canvas/15 p-5">
-              <dt class="text-xs font-semibold uppercase tracking-wider text-surface">Email</dt>
-              <dd class="mt-1 leading-7"><a href="mailto:contact@knowbeforeyougo.au" data-rs-slot="contact.email_href" class="underline decoration-canvas/40 underline-offset-4 hover:decoration-canvas"><span data-rs-slot="contact.email">contact@knowbeforeyougo.au</span></a></dd>
-            </div>
-            <div class="rounded-2xl border border-canvas/15 p-5">
-              <dt class="text-xs font-semibold uppercase tracking-wider text-surface">Open</dt>
-              <dd class="mt-1 leading-7" data-rs-slot="contact.hours">Monday to Saturday, early and late appointments</dd>
-            </div>
-          </dl>
-        </div>
-      </section>
     </main>
 
     <footer id="footer" class="border-t border-hairline/40 bg-canvas">
@@ -439,12 +363,12 @@
           </div>
 
           <nav aria-label="Footer">
-            <h2 class="text-xs font-semibold uppercase tracking-wider">The practice</h2>
+            <h2 class="text-xs font-semibold uppercase tracking-wider">Information</h2>
             <ul class="mt-4 space-y-2 text-muted">
-              <li><a href="#treatments" class="hover:text-accent">What we treat</a></li>
-              <li><a href="#team" class="hover:text-accent">Practitioners</a></li>
-              <li><a href="#hours" class="hover:text-accent">Hours and fees</a></li>
-              <li><a href="#contact" class="hover:text-accent">Book an appointment</a></li>
+              <li><a href="#video" class="hover:text-accent">Risks</a></li>
+              <li><a href="#chronic" class="hover:text-accent">Pain explained</a></li>
+              <li><a href="#faq" class="hover:text-accent">Second Opinion</a></li>
+              <li><a href="#evidence" class="hover:text-accent">Research Evidence</a></li>
             </ul>
           </nav>
 
